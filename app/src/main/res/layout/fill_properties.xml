@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_view_fill_properties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assign owners to properties!"
+            android:theme="@style/Monopoly_Text_Views"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/recycler_view_fill_properties"/>
+
+        <ListView
+            android:id="@+id/recycler_view_fill_properties"
+            android:layout_width="match_parent"
+            android:layout_height="309dp"
+            android:padding="15dp"
+            app:layout_constraintBottom_toTopOf="@id/button_select_positions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_fill_properties"
+            app:layout_constraintVertical_bias="0.274" />
+
+        <Button
+            android:id="@+id/button_select_positions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Positions"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycler_view_fill_properties"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
