@@ -7,6 +7,7 @@
     android:background="@drawable/border"
     android:layout_width="match_parent"
     android:descendantFocusability="blocksDescendants"
+
     android:layout_height="150sp">
 
 
@@ -51,6 +52,7 @@
         android:autoSizeTextType="uniform"
         android:gravity="center"
         android:text="North Carolina Avenue"
+        android:textColor="@color/monopolyGreen"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/owner_text2_list_item2"
@@ -68,6 +70,7 @@
         android:layout_marginTop="8dp"
         android:padding="5dp"
         android:text="H value:"
+        android:textColor="@color/monopolyRed"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,6 +87,7 @@
         android:layout_marginLeft="4dp"
         android:padding="5dp"
         android:text="Owner:"
+        android:textColor="@color/monopolyRed"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
