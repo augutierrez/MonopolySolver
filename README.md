@@ -2,7 +2,7 @@
 
 ## Summary:
 ### Context:
-#### One day I was playing an intense game of Monopoly with my girlfriend and we reached a point in the game where it got really slow and we had bought all the properties available.  I knew this game could last hours until we'd see an end, so that's when I got the idea of Monopoly Solver.  Instead of playing the game for hours to find a winner, why have the computer simulate the game and compute a winner?
+#### One day I was playing an intense game of Monopoly with my girlfriend and we reached a point in the game where it got really slow and we had bought all the properties available.  I knew this game could last hours until we'd see an end, so that's when I got the idea of Monopoly Solver.  Instead of playing the game for hours to find a winner, why not have the computer simulate the game and compute a winner?
 
 #### This app is meant to speed the game of Monopoly up to find a winner when you no longer feel like playing, but still want to know who won.  The app helps gather all the statistics of the game such as: 
 - how many players? 
