@@ -16,10 +16,6 @@ public class MonopolyLogic {
     public static boolean crossedInt;
 
 
-
-
-    //TODO implement house + hotel options that will increment the amount of rent for properties
-    //TODO implement jail feature
     //TODO implement losing/ winning order
     //TODO implement 'Best of' option that will let you decide how many games you want to base the winner off of
     //TODO implement a game summary of what happened - how many rounds? -mvp property that got you the most rent. what rounds did other players lose at?  If best of, maybe do averages between all the games
@@ -35,24 +31,11 @@ public class MonopolyLogic {
         MonopolyLogic.turn = turn;
         MonopolyLogic.random = new Random();
         MonopolyLogic.crossedInt = false;
-
         MonopolyLogic.jailed = new HashMap<>();
 
-        System.out.println("hello");
         while(!checkForWinner()){
-            System.out.println(Integer.MAX_VALUE);
-            System.out.println(MonopolyLogic.players.get(0));
-            System.out.println(MonopolyLogic.players.get(1));
-            //  System.out.println("Player : " + turn + " turn");
-            // System.out.println("Balance before : " + players.get(turn));
             playerRoll(MonopolyLogic.turn);
-            // System.out.println("Balance after : " + players.get(turn));
-            // System.out.println("End turn\n\n");
             MonopolyLogic.turn = (MonopolyLogic.turn + 1) % players.size();
-            System.out.println("up next:" + MonopolyLogic.turn);
-            System.out.println("Player 0 position:" + positions.get(0) + " Player 1 position:" + positions.get(1));
-            System.out.println(jailed.toString());
-            System.out.println("turn of : " + MonopolyLogic.turn);
             round++;
             //repeat game
         }
@@ -75,7 +58,7 @@ public class MonopolyLogic {
      */
     public static int rollDice(){
         // TODO change this to 2 different random calls to better simulate a dice.
-        return random.nextInt(11) + 2;
+        return random.nextInt(6) + 1 + random.nextInt(6) + 1;
     }
 
     /**
@@ -104,15 +87,11 @@ public class MonopolyLogic {
      * @param player - the index of the player who is rolling
      */
     public static void playerRoll(int player){
-        System.out.println("Currently rolling player:" + MonopolyLogic.turn);
-        System.out.println("player : " + player);
-
         if(MonopolyLogic.jailed.containsKey(MonopolyLogic.turn)){
             if(MonopolyLogic.jailed.get(MonopolyLogic.turn) < 3) {
                 MonopolyLogic.jailed.put(MonopolyLogic.turn, MonopolyLogic.jailed.get(MonopolyLogic.turn) + 1);
                 return;
             }
-            System.out.println("Player : " + MonopolyLogic.turn + " is out of jail.");
             MonopolyLogic.jailed.remove(MonopolyLogic.turn);
         }
         int pos = MonopolyLogic.positions.get(player);
@@ -130,19 +109,9 @@ public class MonopolyLogic {
     }
 
     public static void event(int currPos){
-        System.out.println("jail check for turn: " + turn );
         if(currPos == 30){
-            System.out.println("worked");
-        }
-        else{
-            System.out.println("didn't work");
-        }
-        if(currPos == 30){
-            System.out.println("checking for jail");
             //Player is added to the jail list
-
             MonopolyLogic.jailed.put(turn, 0);
-            System.out.println("Jail time for player: " + turn);
             //moving player to jail spot
             MonopolyLogic.positions.set(turn, 10);
             return;
@@ -159,11 +128,6 @@ public class MonopolyLogic {
         int rent = card.getRent();
         int owner = card.getOwner();
         if(owner > -1 && player != owner) {
-            // System.out.println("Balance before : " + players.get(turn));
-            System.out.println("Roll number: " + MonopolyLogic.round);
-            System.out.println("Player : " + MonopolyLogic.turn + " with balance : " + MonopolyLogic.players.get(MonopolyLogic.turn) + " is paying : " + rent + " to player : " + owner);
-            System.out.println();
-            // System.out.println("Balance before : " + players.get(turn));
             playerRemove(player, rent);
             playerAdd(owner, rent);
         }
@@ -178,7 +142,6 @@ public class MonopolyLogic {
         long total = MonopolyLogic.players.get(player);
         MonopolyLogic.players.set(player, total + value);
         if (MonopolyLogic.players.get(player) >= Integer.MAX_VALUE){
-            System.out.println("changing crossedInt to true");
             MonopolyLogic.crossedInt = true;
         }
     }

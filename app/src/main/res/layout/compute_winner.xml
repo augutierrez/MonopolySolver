@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_view_compute_winner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game Summary"
+            android:theme="@style/Monopoly_Text_Views"
+            app:layout_constraintBottom_toTopOf="@id/winner_text_computer_winner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/winner_text_computer_winner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player 0"
+            android:theme="@style/Monopoly_Text_Views"
+            app:layout_constraintBottom_toTopOf="@id/rounds_text_compute_winner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_compute_winner" />
+
+        <TextView
+            android:id="@+id/rounds_text_compute_winner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:theme="@style/Monopoly_Text_Views"
+            app:layout_constraintBottom_toTopOf="@id/compute_again_compute_winner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/winner_text_computer_winner" />
+
+        <Button
+            android:id="@+id/compute_again_compute_winner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compute Again"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rounds_text_compute_winner" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

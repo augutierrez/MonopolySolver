@@ -3,6 +3,24 @@ import java.util.ArrayList;
 
 public class MonopolySolver {
     public static ArrayList<MonopolyCard> properties;
+    public static ArrayList<Integer> positions;
+    public static ArrayList<Long> balances;
+    public static ArrayList<MonopolyCard>deck;
+
+    public static void generatePositions(int numPlayers){
+        positions = new ArrayList<>();
+        for(int i = 0; i < numPlayers; i++){
+            positions.add(0);
+        }
+    }
+
+    public static void generateBalances(int numPlayers){
+        balances = new ArrayList<>();
+        for(int i = 0; i < numPlayers; i++){
+            balances.add((long)0);
+        }
+    }
+
 
     public static void generateDeck(){
         properties = new ArrayList<>();
@@ -11,7 +29,8 @@ public class MonopolySolver {
         /*
         Populate all the Monopoly properties and then the next thing would be to assign who owns them
          */
-        ArrayList<MonopolyCard> deck = new ArrayList<>();
+
+        deck = new ArrayList<>();
 
         for(int i = 0; i < 40; i++){
             deck.add(new MonopolyCard(-1, 0, i));

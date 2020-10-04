@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 import monopolyLogic.MonopolyCard;
-import monopolyLogic.MonopolyLogic;
 import monopolyLogic.MonopolySolver;
 
 public class FillProperties extends AppCompatActivity {
@@ -46,7 +45,7 @@ public class FillProperties extends AppCompatActivity {
             }
 
         });
-        Button button = findViewById(R.id.button_select_positions);
+        Button button = findViewById(R.id.button_compute_winner);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,13 +57,13 @@ public class FillProperties extends AppCompatActivity {
                     int position = card.getPos();
 
                     //updating the official deck
-                    MonopolyLogic.deck.set(position, card);
+                    MonopolySolver.deck.set(position, card);
 
                     Log.i("properties", properties.get(i).getName());
                     Log.i("properties", "Belong to player:" + properties.get(i).getOwner());
                 }
 
-                Intent intent = new Intent(FillProperties.this, FillPositions.class);
+                Intent intent = new Intent(FillProperties.this, ComputeWinner.class);
                 intent.putExtra("np", numPlayers);
                 startActivity(intent);
 

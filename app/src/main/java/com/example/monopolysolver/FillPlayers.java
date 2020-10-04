@@ -9,6 +9,8 @@ import android.widget.NumberPicker;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import monopolyLogic.MonopolySolver;
+
 public class FillPlayers extends AppCompatActivity {
     public NumberPicker np;
     @Override
@@ -25,6 +27,8 @@ public class FillPlayers extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MonopolySolver.generatePositions(np.getValue());
+                MonopolySolver.generateBalances(np.getValue());
                 Intent intent = new Intent(FillPlayers.this, FillBalance.class);
                 intent.putExtra("np", (int)np.getValue());
                 startActivity(intent);

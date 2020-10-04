@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="309dp"
             android:padding="15dp"
-            app:layout_constraintBottom_toTopOf="@id/button_select_positions"
+            app:layout_constraintBottom_toTopOf="@id/button_compute_winner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +36,10 @@
             app:layout_constraintVertical_bias="0.274" />
 
         <Button
-            android:id="@+id/button_select_positions"
+            android:id="@+id/button_compute_winner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select Positions"
+            android:text="Compute Winner"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -11,15 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import monopolyLogic.MonopolyCard;
-import monopolyLogic.MonopolyLogic;
 import monopolyLogic.MonopolySolver;
 
 public class EditProperty extends AppCompatActivity {
     public int pos;
     public EditText ownerEdit;
     public EditText hEdit;
-    public boolean successfulChange;
-    public boolean hChange;
     public boolean pChange;
 
     @Override
@@ -46,7 +43,7 @@ public class EditProperty extends AppCompatActivity {
                     p = "-1";
                     pChange=false;
                 }
-                MonopolySolver.properties.get(pos).setPlayer(Integer.parseInt(p));
+                MonopolySolver.properties.get(pos).setPlayer(Integer.parseInt(p) - 1); // -1 to match program index
                 //updating hValue
                 String h = hEdit.getText().toString();
                 if(h.isEmpty()){

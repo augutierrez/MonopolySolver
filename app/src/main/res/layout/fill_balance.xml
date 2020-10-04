@@ -16,18 +16,18 @@
             android:id="@+id/text_view_fill_balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fill in the balance for each player!"
+            android:text="Fill in the balance and position for each player!"
             android:theme="@style/Monopoly_Text_Views"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/recycler_view_fill_balance"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginVertical="50dp"
+        <ListView
             android:id="@+id/recycler_view_fill_balance"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="427dp"
+            android:layout_height="280dp"
+            android:layout_marginVertical="50dp"
             android:padding="15dp"
             app:layout_constraintBottom_toTopOf="@id/button_fill_balance"
             app:layout_constraintEnd_toEndOf="parent"
