@@ -1,5 +1,6 @@
 package com.example.monopolysolver;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 import monopolyLogic.MonopolyLogic;
 import monopolyLogic.MonopolySolver;
 
-public class FillBalance extends AppCompatActivity {
+public class FillBalance extends Activity {
     public int numPlayers;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

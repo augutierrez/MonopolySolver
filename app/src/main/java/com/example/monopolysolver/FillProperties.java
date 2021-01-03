@@ -1,5 +1,6 @@
 package com.example.monopolysolver;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import monopolyLogic.MonopolyCard;
 import monopolyLogic.MonopolySolver;
 
-public class FillProperties extends AppCompatActivity {
+public class FillProperties extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

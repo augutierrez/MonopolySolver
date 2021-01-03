@@ -1,5 +1,6 @@
 package com.example.monopolysolver;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import monopolyLogic.MonopolyCard;
 import monopolyLogic.MonopolySolver;
 
-public class EditProperty extends AppCompatActivity {
+public class EditProperty extends Activity {
     public int pos;
     public EditText ownerEdit;
     public EditText hEdit;
